@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<style>
+body 
+{
+     background-image:url(./bg.jpg);
+}
+
+h1
+ {
+     text-align:center;
+     color:red;
+ }
+
+p
+ {
+     text-align:center;
+ }
+
+#divdown1
+ {
+     text-align:center;
+     font-size:40px;
+     color:pink;
+}
+
+</style>
+
+<head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>记录</title>
+</head>
+
+<body>
+          <h1>一张与陈老师的记录页</h1>
+          <br>
+          <p>2022年3月17日14时38分27秒，陈老师批评张老师只想了她四秒，并表达了自己的不开心，聊天截图如下：<br><br>
+	<img src="D:\to Chen\pic.jpg" alt="聊天记录截图" width="259.8" height="300" ><br><br>
+	因此，张老师在此记录：<br><br>
+         </p>
+
+         <script language="javascript" type="text/javascript">
+	var interval = 1000;
+	function ShowCountDown(year,month,day, h,m,s,divname)
+	{
+		var now = new Date();
+		var endDate = new Date(year, month-1, day,h,m,s);
+		var leftTime=now.getTime()-endDate.getTime();
+		var leftsecond = parseInt(leftTime/1000);
+		//var day1=parseInt(leftsecond/(24*60*60*6));
+		var day1=Math.floor(leftsecond/(60*60*24));
+		var hour=Math.floor((leftsecond-day1*24*60*60)/3600);
+		var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60);
+		var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60);
+		var cc = document.getElementById(divname);
+		cc.innerHTML = "现在是想念、喜欢陈老师的第"+day1+"天"+hour+"小时"+minute+"分"+second+"秒";
+	}
+	window.setInterval(function(){ShowCountDown(2022,3,11,17,50,00,'divdown1');}, interval);
+         </script>
+         <div id="divdown1"></div>
+</body>
+
+</html>
